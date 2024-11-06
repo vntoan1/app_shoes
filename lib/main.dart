@@ -23,8 +23,8 @@ void main() async {
       .then((FirebaseApp value) => Get.put(AuthenticationRepository()));
   runApp(const App());
 }
-
-class App extends StatelessWidget {
+// asfsfsf
+class Appextends StatelessWidget {
   const App({super.key});
 
   @override
