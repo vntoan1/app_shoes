@@ -6,8 +6,8 @@ import 'package:sport_shoes_store/features/authentication/screens/signup/widgets
 import 'package:sport_shoes_store/utils/constants/colors.dart';
 import 'package:sport_shoes_store/utils/constants/text_strings.dart';
 import 'package:sport_shoes_store/utils/helpers/helper.dart';
+
 import '../../../../utils/constants/sizes.dart';
-//Đây là màn hình đăng ký cho người dùng mới.
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
 

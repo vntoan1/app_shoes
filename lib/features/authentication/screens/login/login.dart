@@ -11,7 +11,6 @@ import 'package:sport_shoes_store/utils/helpers/helper.dart';
 
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/constants/text_strings.dart';
-//Widget chính cho màn hình đăng nhập.
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -24,9 +23,8 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
     return Scaffold(
-      // backgroundcolor : Colors.black,
       body: SingleChildScrollView(
-      child: Padding(
+        child: Padding(
           padding: SpacingStyle.paddingWithAppBarHeight,
           child: Column(
             children: [
@@ -38,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ],
           ),
         ),
-      ), //SingleChildScrollView : Cho phép cuộn nội dung nếu quá dài.
+      ),
     );
   }
 }

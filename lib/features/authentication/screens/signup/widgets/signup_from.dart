@@ -11,7 +11,7 @@ import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
 import '../../../../../utils/helpers/helper.dart';
-// form đăng kí
+
 class SignupFrom extends StatelessWidget {
   const SignupFrom({
     super.key,

@@ -39,83 +39,81 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SingleChildScrollView(
-          child: Column(
+      child: Column(
+        children: [
+          const PrimaryHeaderContainer(
+              child: Column(
             children: [
-              const PrimaryHeaderContainer( // Header và Danh mục
-                  child: Column(
-                    children: [
-                      HomeAppBar(),
-                      // SizedBox(
-                      //   height: Sizes.spaceBtwSections,
-                      // ),
-                      // SearchContainer(
-                      //   text: 'Tìm kiếm trong cửa hàng',
-                      // ),
-                      SizedBox(
-                        height: Sizes.spaceBtwSections,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: Sizes.defaultSpace),
-                        child: Column(
-                          children: [
-                            SectionHeading(
-                              title: 'Thương hiệu phổ biến',
-                              showActionButton: false,
-                              textColor: ColorApp.bg,
-                            )
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: Sizes.spaceBtwSections,
-                      ),
-                      HomeCategories(),
-                      SizedBox(
-                        height: Sizes.spaceBtwSections * 2,
-
-                      ),
-                    ],
-                  )),
+              HomeAppBar(),
+              SizedBox(
+                height: Sizes.spaceBtwSections,
+              ),
+              SearchContainer(
+                text: 'Tìm kiếm trong cửa hàng',
+              ),
+              SizedBox(
+                height: Sizes.spaceBtwSections,
+              ),
               Padding(
-                  padding: const EdgeInsets.all(Sizes.defaultSpace),
-                  child: Column(
-                    children: [
-                      const PromoSlider(),
-                      const SizedBox(
-                        height: Sizes.spaceBtwSections,
-                      ),
-                      SectionHeading(
-                        title: 'Sản phẩm bán chạy',
-                        // textColor: Colors.red,
-                        onPressed: () => Get.to(() => AllProductScreen(
-                            title: 'Popular Products',
-                            futureMethod: controller.fetchAllFeaturedProducts(),
-                            query: FirebaseFirestore.instance
-                                .collection('Products')
-                                .where('IsFeatured', isEqualTo: true)
-                                .limit(6))),
-                      ),
-                      const SizedBox(
-                        height: Sizes.spaceBtwSections,
-                      ),
-                      Obx(() {
-                        if (controller.isLoading.value) {
-                          return const VerticalProductShimmer();
-                        }
-                        if (controller.featuredProducts.isEmpty) {
-                          return Center(
-                              child: Text('No data',
-                                  style: Theme.of(context).textTheme.bodyMedium));
-                        }
-                        return GridLayout(
-                            itemCount: controller.featuredProducts.length,
-                            itemBuilder: (context, index) => ProductCardVertical(
-                                productModel: controller.featuredProducts[index]));
-                      })
-                    ],
-                  ))
+                padding: EdgeInsets.only(left: Sizes.defaultSpace),
+                child: Column(
+                  children: [
+                    SectionHeading(
+                      title: 'Thương hiệu phổ biến',
+                      showActionButton: false,
+                      textColor: ColorApp.bg,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: Sizes.spaceBtwSections,
+              ),
+              HomeCategories(),
+              SizedBox(
+                height: Sizes.spaceBtwSections * 2,
+              ),
             ],
-          ),
-        ));
+          )),
+          Padding(
+              padding: const EdgeInsets.all(Sizes.defaultSpace),
+              child: Column(
+                children: [
+                  const PromoSlider(),
+                  const SizedBox(
+                    height: Sizes.spaceBtwSections,
+                  ),
+                  SectionHeading(
+                    title: 'Sản phẩm bán chạy',
+                    onPressed: () => Get.to(() => AllProductScreen(
+                        title: 'Popular Products',
+                        futureMethod: controller.fetchAllFeaturedProducts(),
+                        query: FirebaseFirestore.instance
+                            .collection('Products')
+                            .where('IsFeatured', isEqualTo: true)
+                            .limit(6))),
+                  ),
+                  const SizedBox(
+                    height: Sizes.spaceBtwSections,
+                  ),
+                  Obx(() {
+                    if (controller.isLoading.value) {
+                      return const VerticalProductShimmer();
+                    }
+                    if (controller.featuredProducts.isEmpty) {
+                      return Center(
+                          child: Text('No data',
+                              style: Theme.of(context).textTheme.bodyMedium));
+                    }
+                    return GridLayout(
+                        itemCount: controller.featuredProducts.length,
+                        itemBuilder: (context, index) => ProductCardVertical(
+                            productModel: controller.featuredProducts[index]));
+                  })
+                ],
+              ))
+        ],
+      ),
+    ));
   }
 }

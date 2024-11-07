@@ -11,21 +11,21 @@ import '../../../../utils/constants/image_strings.dart';
 import '../../screens/signup/vefify_email.dart';
 
 class LoginController extends GetxController{
-  final rememberMe = false.obs;  //theo dõi xem người dùng có muốn lưu thông tin đăng nhập của họ hay không
-  final hidePassword =  true.obs; // xác định xem mật khẩu có bị ẩn hay không.
-  final localStorage = GetStorage(); // lưu trữ
-  final email = TextEditingController(); // ghi lại thông tin đầu vào
+  final rememberMe = false.obs;
+  final hidePassword =  true.obs;
+  final localStorage = GetStorage();
+  final email = TextEditingController();
   final password = TextEditingController();
-  GlobalKey<FormState> loginFormKey = GlobalKey<FormState>(); //để xác thực biểu mẫu đăng nhập.
+  GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   final userController = Get.put(UserController());
 
   Future<void> emailAndPasswordSignIn() async {
     try{
       // Check internet connectivity
-      FullScreenLoader.openLoadingDialog( // hiển thị hộp thoại tải bằng cách sử dụng FullScreenLoader
+      FullScreenLoader.openLoadingDialog(
           'Login...', Images.product1);
       //Check internet connectivity
-      final isConnected = await NetworkManager.instance.isConnected(); // kiểm tra kết nối
+      final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
         FullScreenLoader.stopLoading();
         return;
@@ -36,23 +36,23 @@ class LoginController extends GetxController{
       //   return;
       // }
       //save data if remember me í selected
-      if(rememberMe.value){ //Lưu thông tin đăng nhập nếu rememberMeđúng.
+      if(rememberMe.value){
         localStorage.write('REMEMBER_ME_EMAIL', email.text.trim());
         localStorage.write('REMEMBER_ME_PASSWORD', password.text.trim());
       }
 
       final userCredentials = await AuthenticationRepository.instance.loginWithEmailAndPassword(email.text.trim(), password.text.trim());
-// xác thực người dùng bằng email và mật khẩu được cung cấp thông qua AuthenticationRepository
-      FullScreenLoader.stopLoading(); // Dừng trình tải và chuyển hướng khi thành công.
+
+      FullScreenLoader.stopLoading();
 
       AuthenticationRepository.instance.screenRedirect();
     }catch(e){
       FullScreenLoader.stopLoading();
       Loaders.errorSnackBar(title: 'Đăng nhập thất bại', message: e.toString());
     }
-  }//Xử lý mọi lỗi bằng cách hiển thị thanh thông báo lỗi.
+  }
 
-  Future<void> googleSignIn() async { //Thử đăng nhập Google
+  Future<void> googleSignIn() async {
     try{
       FullScreenLoader.openLoadingDialog('Login you in...', Images.product1);
 
@@ -64,7 +64,6 @@ class LoginController extends GetxController{
 
       final userCredentials = await AuthenticationRepository.instance.signInWithGoogle();
       await userController.saveUserRecord(userCredentials);
-      //Khi thành công, lưu hồ sơ người dùng qua userControllervà chuyển hướng người dùng.
       FullScreenLoader.stopLoading();
       AuthenticationRepository.instance.screenRedirect();
     }catch(e){

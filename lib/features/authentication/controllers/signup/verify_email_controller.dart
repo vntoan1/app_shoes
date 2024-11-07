@@ -7,11 +7,11 @@ import 'package:sport_shoes_store/data/repositories/authentication_repository.da
 import 'package:sport_shoes_store/features/authentication/screens/signup/success_screen.dart';
 import 'package:sport_shoes_store/utils/constants/image_strings.dart';
 import 'package:sport_shoes_store/utils/constants/text_strings.dart';
-// Quản lý quá trình xác minh email.
+
 class VerifyEmailController extends GetxController {
   static VerifyEmailController get instance => Get.find();
   @override
-  void onInit() { // kiểm tra xem email đã được xác minh chưa và tự động chuyển hướng nếu đã xác minh
+  void onInit() {
     // sendEmailVerification();
     // setTimerForAutoRedirect();
     checkEmailVerificationStatus();
@@ -48,7 +48,6 @@ class VerifyEmailController extends GetxController {
 
   /// Manually check if email verification
   checkEmailVerificationStatus() async {
-    // Kiểm tra xem email của người dùng hiện tại đã được xác minh chưa. Nếu đã xác minh, nó sẽ chuyển hướng đến SuccessScreen
     final currentUser = FirebaseAuth.instance.currentUser;
     if(currentUser != null && currentUser.emailVerified){
       Get.offAll(() => SuccessScreen(

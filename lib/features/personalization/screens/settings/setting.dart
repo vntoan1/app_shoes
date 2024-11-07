@@ -76,61 +76,61 @@ class _SettingScreenState extends State<SettingScreen> {
                       title: 'Đơn hàng đã mua',
                       subTitle: 'Set shopping ...',
                       onTap: () => Get.to(() => const OrderScreen())),
-                  // const SettingMenuTitle(
-                  //     icon: Icons.food_bank,
-                  //     title: 'Thanh toán bằng ...',
-                  //     subTitle: 'Set shopping ...'),
-                  // const SettingMenuTitle(
-                  //     icon: Icons.discount,
-                  //     title: 'Phiếu giảm giá',
-                  //     subTitle: 'Set shopping ...'),
-                  // const SettingMenuTitle(
-                  //     icon: Icons.notifications,
-                  //     title: 'Thông báo',
-                  //     subTitle: 'Set shopping ...'),
-                  // const SettingMenuTitle(
-                  //     icon: Icons.security,
-                  //     title: 'Bảo vệ tài khoan',
-                  //     subTitle: 'Set shopping ...'),
-                  // const SizedBox(
-                  //   height: Sizes.spaceBtwSections,
-                  // ),
-                  // const SectionHeading(
-                  //   title: 'App Setting',
-                  //   showActionButton: false,
-                  // ),
-                  // const SizedBox(
-                  //   height: Sizes.spaceBtwItems,
-                  // ),
-                  // SettingMenuTitle(
-                  //   icon: Icons.cloud_upload,
-                  //   title: 'Load Data',
-                  //   subTitle: 'Upload Data to .......',
-                  //   trailing: Switch(
-                  //     value: true,
-                  //     onChanged: (value) {},
-                  //   ),
-                  // ),
-                  // SettingMenuTitle(
-                  //   icon: Icons.security_rounded,
-                  //   title: 'Safe Mode',
-                  //   subTitle: 'Upload Data to .......',
-                  //   trailing: Switch(
-                  //     value: true,
-                  //     onChanged: (value) {},
-                  //   ),
-                  // ),
-                  // SettingMenuTitle(
-                  //   icon: Icons.cloud_upload,
-                  //   title: 'HD Image',
-                  //   subTitle: 'Upload Data to .......',
-                  //   trailing: Switch(
-                  //     value: true,
-                  //     onChanged: (value) {},
-                  //   ),
-                  // ),
+                  const SettingMenuTitle(
+                      icon: Icons.food_bank,
+                      title: 'Thanh toán bằng ...',
+                      subTitle: 'Set shopping ...'),
+                  const SettingMenuTitle(
+                      icon: Icons.discount,
+                      title: 'Phiếu giảm giá',
+                      subTitle: 'Set shopping ...'),
+                  const SettingMenuTitle(
+                      icon: Icons.notifications,
+                      title: 'Thông báo',
+                      subTitle: 'Set shopping ...'),
+                  const SettingMenuTitle(
+                      icon: Icons.security,
+                      title: 'Bảo vệ tài khoan',
+                      subTitle: 'Set shopping ...'),
                   const SizedBox(
-                    height: 360,
+                    height: Sizes.spaceBtwSections,
+                  ),
+                  const SectionHeading(
+                    title: 'App Setting',
+                    showActionButton: false,
+                  ),
+                  const SizedBox(
+                    height: Sizes.spaceBtwItems,
+                  ),
+                  SettingMenuTitle(
+                    icon: Icons.cloud_upload,
+                    title: 'Load Data',
+                    subTitle: 'Upload Data to .......',
+                    trailing: Switch(
+                      value: true,
+                      onChanged: (value) {},
+                    ),
+                  ),
+                  SettingMenuTitle(
+                    icon: Icons.security_rounded,
+                    title: 'Safe Mode',
+                    subTitle: 'Upload Data to .......',
+                    trailing: Switch(
+                      value: true,
+                      onChanged: (value) {},
+                    ),
+                  ),
+                  SettingMenuTitle(
+                    icon: Icons.cloud_upload,
+                    title: 'HD Image',
+                    subTitle: 'Upload Data to .......',
+                    trailing: Switch(
+                      value: true,
+                      onChanged: (value) {},
+                    ),
+                  ),
+                  const SizedBox(
+                    height: Sizes.spaceBtwItems,
                   ),
                   SizedBox(
                     width: double.infinity,

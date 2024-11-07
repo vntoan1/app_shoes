@@ -54,15 +54,15 @@ class StoreScreen extends StatelessWidget {
               padding: const EdgeInsets.all(Sizes.defaultSpace),
               child: Column(
                 children: [
-                  // const SizedBox(
-                  //   height: Sizes.spaceBtwItems,
-                  // ),
-                  // const SearchContainer(
-                  //   text: 'Tìm kiếm trong cửa hàng',
-                  //   showBorder: true,
-                  //   showBackground: true,
-                  //   padding: EdgeInsets.zero,
-                  // ),
+                  const SizedBox(
+                    height: Sizes.spaceBtwItems,
+                  ),
+                  const SearchContainer(
+                    text: 'Tìm kiếm trong cửa hàng',
+                    showBorder: true,
+                    showBackground: true,
+                    padding: EdgeInsets.zero,
+                  ),
                   const SizedBox(
                     height: Sizes.spaceBtwSections,
                   ),

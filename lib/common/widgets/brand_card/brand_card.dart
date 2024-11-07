@@ -45,11 +45,11 @@ class BrandCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   BrandTitleWithVerifiedIcon(title: brandModel.name, brandTextSizes: TextSizes.large,),
-                  // Text(
-                  //   '${brandModel.productsCount ?? 0} products',
-                  //   overflow: TextOverflow.ellipsis,
-                  //   style: Theme.of(context).textTheme.labelMedium,
-                  // )
+                  Text(
+                    '${brandModel.productsCount ?? 0} products',
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.labelMedium,
+                  )
                 ],
               ),
             )

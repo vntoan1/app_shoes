@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-// Được sử dụng để lưu trữ các giá trị như IsFirstTime nhằm xác định xem người dùng đã hoàn thành onboarding hay chưa.
 import 'package:sport_shoes_store/features/authentication/screens/login/login.dart';
 class   OnBoardingController extends GetxController{
   static OnBoardingController get instance => Get.find();

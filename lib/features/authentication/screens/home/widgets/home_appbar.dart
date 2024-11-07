@@ -16,7 +16,6 @@ class HomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(UserController());
-    //Sử dụng Get để khởi tạo UserController, giúp quản lý trạng thái của người dùng và dữ liệu hồ sơ.
     return KAppbar(
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,7 +46,7 @@ class HomeAppBar extends StatelessWidget {
         CartCounterIcon(
           iconColor: Colors.white,
           onPressed: () {},
-        )// icon giỏ hàng
+        )
       ],
     );
   }

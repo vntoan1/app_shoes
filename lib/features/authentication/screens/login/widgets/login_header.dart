@@ -5,7 +5,7 @@ import 'package:sport_shoes_store/utils/helpers/helper.dart';
 import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
-// Widget này hiển thị tiêu đề và hình ảnh cho màn hình đăng nhập.
+
 class LoginHeader extends StatelessWidget {
   const LoginHeader({
     super.key,

@@ -10,7 +10,6 @@ import 'package:sport_shoes_store/utils/helpers/helper.dart';
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
-//Màn hình giới thiệu cho ứng dụng. Đây là những màn hình đầu tiên người dùng thấy khi lần đầu tiên mở ứng dụng.
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
 

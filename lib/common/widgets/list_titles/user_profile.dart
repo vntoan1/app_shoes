@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sport_shoes_store/data/controller/user_controller.dart';
 
-import '../../../features/personalization/screens/profile/profile.dart';
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../image_text_widgets/vertical_image_text.dart';
@@ -61,7 +60,7 @@ class UserProfile extends StatelessWidget {
             Theme.of(context).textTheme.bodyMedium!.apply(color: ColorApp.bg),
       ),
       trailing: IconButton(
-        onPressed: () => Get.to(() => const ProfileScreen()),
+        onPressed: () {},
         icon: const Icon(
           Icons.edit,
           color: ColorApp.bg,

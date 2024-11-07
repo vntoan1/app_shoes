@@ -9,7 +9,7 @@ import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
 import '../../signup/signup.dart';
-//Widget này xử lý công việc nhập thông tin đăng nhập.
+
 class LoginFrom extends StatelessWidget {
   const LoginFrom({
     super.key,
@@ -17,8 +17,8 @@ class LoginFrom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(LoginController()); // Tạo và quản lý LoginControllerthông qua Get.put().
-    final _keyForm = GlobalKey<FormState>(); //Khóa toàn cục cho biểu mẫu để xử lý xác thực.
+    final controller = Get.put(LoginController());
+    final _keyForm = GlobalKey<FormState>();
     return Form(
       key: _keyForm,
       child: Padding(
@@ -27,7 +27,7 @@ class LoginFrom extends StatelessWidget {
           children: [
             TextFormField(
               controller: controller.email,
-              validator: (value) { //Kiểm tra xem trường dữ liệu trống hay không.
+              validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter some text';
                 }
@@ -40,7 +40,7 @@ class LoginFrom extends StatelessWidget {
             const SizedBox(
               height: Sizes.spaceBtwInoutFields,
             ),
-            Obx(// Sử dụng Obxđể theo dõi trạng thái của mật khẩu trường (ẩn/hiện tại).
+            Obx(
               () => TextFormField(
                 controller: controller.password,
                 validator: (value) => Validator.validatePassword(value),
@@ -65,7 +65,7 @@ class LoginFrom extends StatelessWidget {
                 Row(
                   children: [
                     Obx(() => Checkbox(
-                        value: controller.rememberMe.value, // phần ghi nhớ
+                        value: controller.rememberMe.value,
                         onChanged: (value) => controller.rememberMe.value = !controller.rememberMe.value)),
                     const Text(TextString.rememberMe),
                   ],
@@ -73,7 +73,7 @@ class LoginFrom extends StatelessWidget {
                 TextButton(
                     onPressed: () => Get.to(() => const ForgetPassword()),
                     child: const Text(TextString.forgetPassword))
-              ], // quên mật khẩu
+              ],
             ),
             const SizedBox(
               height: Sizes.spaceBtwSections,

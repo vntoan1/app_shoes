@@ -21,7 +21,7 @@ class ProductQuantityWithAddRemove extends StatelessWidget {
     return Row(
           children: [
             CircularIcon(
-              icon: Icons.remove,
+              icon: Icons.add,
               width: 32,
               height: 32,
               size: Sizes.md,

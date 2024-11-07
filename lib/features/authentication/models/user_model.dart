@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-// lưu trữ và truy xuất dữ liệu từ cơ sở dữ liệu Firestore
 import 'package:sport_shoes_store/utils/formatters/formatter.dart';
 
 class UserModel {
@@ -19,12 +18,11 @@ class UserModel {
       required this.lastName,
       required this.phoneNumber,
       required this.profilePicture});
-  // Lớp UserModel đại diện cho dữ liệu người dùng và cung cấp các phương thức để thao tác với dữ liệu này
+
   String get fullName => '$firstName $lastName';
 
   String get formattedPhoneNo => Formatter.formatPhoneNumber(phoneNumber);
   static List<String> nameParts(fullName) => fullName.split(" ");
-  // Tách tên đầy đủ thành danh sách các từ, ở trong phần profile
   static String generateUsername(fullName) {
     List<String> nameParts = fullName.split(" ");
     String firstName = nameParts[0].toUpperCase();
@@ -44,7 +42,7 @@ class UserModel {
       phoneNumber: '',
       profilePicture: '');
 
-  /// Chuyển đổi mô hình sang cấu trúc JSON để lưu trữ dữ liệu trong Firebase
+  /// Convert model to JSON structure for storing data in Firebase
   Map<String, dynamic> toJson() {
     return {
       'FirstName': firstName,
@@ -55,7 +53,7 @@ class UserModel {
       'ProfilePicture': profilePicture,
     };
   }
-// Chuyển đổi đối tượng UserModel thành định dạng JSON để lưu trữ trong Firestore hoặc bất kỳ nơi nào cần dữ liệu JSON. Các trường trong đối tượng được ánh xạ thành các key tương ứng.
+
   factory UserModel.fromSnapshot(
       DocumentSnapshot<Map<String, dynamic>> document) {
     if (document.data() != null) {

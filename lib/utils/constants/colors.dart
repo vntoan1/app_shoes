@@ -11,7 +11,6 @@ class ColorApp {
   static const main = Color(0xFF000958);
   static const black = Color(0xff111111);
   static const black33 = Color(0xff333333);
-  static const red = Color(0xFFFF0000); // Mã màu đỏ
 
   static const Gradient linearGradient = LinearGradient(
     begin: Alignment(0.0, 0.0),

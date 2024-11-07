@@ -12,7 +12,7 @@ import 'package:sport_shoes_store/utils/constants/text_strings.dart';
 import 'package:sport_shoes_store/utils/helpers/helper.dart';
 
 import '../../../../utils/constants/image_strings.dart';
-// Màn hình xác thực email. Sau khi đăng ký, người dùng cần xác nhận email để hoàn tất.
+
 class VerifyEmailScreen extends StatefulWidget {
   VerifyEmailScreen({super.key, this.email});
   String? email;

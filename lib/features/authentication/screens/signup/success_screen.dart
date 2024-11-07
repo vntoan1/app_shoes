@@ -10,7 +10,7 @@ import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/constants/text_strings.dart';
 import '../../../../utils/helpers/helper.dart';
 import '../login/login.dart';
-// Đây là màn hình thành công được hiển thị khi người dùng hoàn tất đăng ký hoặc một hành động nào đó thành công.
+
 class SuccessScreen extends StatelessWidget {
   const SuccessScreen({super.key, required this.image, required this.title, required this.subTitle, required this.onPressed});
   final String image, title, subTitle;

@@ -8,7 +8,7 @@ import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
-//  Widget này chứa các nút cho việc đăng nhập qua mạng xã hội.
+
 class SocialButtons extends StatelessWidget {
   const SocialButtons({
     super.key,
@@ -16,17 +16,17 @@ class SocialButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(LoginController()); // Tạo và quản lý LoginController.
+    final controller = Get.put(LoginController());
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Container( //Chỉnh sửa các nút trong Containerđể thêm đường viền và làm tròn.
+        Container(
           decoration: BoxDecoration(
               border: Border.all(color: ColorApp.grey82),
               borderRadius: BorderRadius.circular(100)
           ),
           child: IconButton(
-            onPressed: () => controller.googleSignIn(), //Xử lý sự kiện onPressedcho nút Google để gọi hàm googleSignIn.
+            onPressed: () => controller.googleSignIn(),
             icon: const Image(
               width: Sizes.iconMd,
               height: Sizes.iconMd,

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sport_shoes_store/common/widgets/shimmer/shimmer.dart';
 import 'package:sport_shoes_store/features/shop/controllers/banner_controller.dart';
-// để quản lý các banner.
 import 'package:sport_shoes_store/utils/constants/colors.dart';
 
 import '../../../../../common/widgets/custom_shapes/containers/circular_container.dart';
@@ -12,7 +11,7 @@ import '../../../../../common/widgets/images/rounded_image.dart';
 import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../controllers/home_controller.dart';
- // Đây là widget để hiển thị các banner quảng cáo dưới dạng slider.
+
 class PromoSlider extends StatelessWidget {
   const PromoSlider({
     super.key,
@@ -21,7 +20,6 @@ class PromoSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(BannerController());
-    // Khởi tạo BannerController để quản lý trạng thái của các banner quảng cáo.
     return Obx(() {
       if (controller.isLoading.value) return const KShimmerEffect(width: double.infinity, height: 190);
       if (controller.banners.isEmpty) {
@@ -41,7 +39,7 @@ class PromoSlider extends StatelessWidget {
               options: CarouselOptions(
                   viewportFraction: 1,
                   onPageChanged: (index, _) =>
-                      controller.updatePageIndicator(index)), // điều chỉnh slide
+                      controller.updatePageIndicator(index)),
               items: controller.banners
                   .map((banner) => RoundImage(
                 imageUrl: banner.imageUrl,
